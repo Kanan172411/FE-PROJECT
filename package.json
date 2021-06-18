@@ -1,0 +1,20 @@
+{
+    "name": "feproject",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "watch:sass": "node-sass --w assets/sass/index.scss assets/css/style.css --output-style compressed",
+        "devserver": "live-server",
+        "start": "npm-run-all --parallel watch:sass devserver",
+        "compile:sass": "node-sass assets/scss/main.scss assets/css/style.css",
+        "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' assets/css/style.css -o assets/css/style.prefix.css",
+        "compress:css": "node-sass assets/css/style.prefix.css assets/css/style.compressed.css --output-style compressed"
+    },
+    "author": "kanangarayev",
+    "license": "ISC",
+    "dependencies": {
+        "bootstrap": "^4.6.0",
+        "node-sass": "^5.0.0"
+    }
+}
